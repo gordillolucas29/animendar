@@ -1,0 +1,134 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: rgb(86,66,61);
+    /* background: linear-gradient(45deg, rgba(86,66,61,1) 0%, rgba(190,166,160,1) 40%, rgba(190,166,160,1) 60%, rgba(255,0,0,1) 100%); */
+    /* opacity: 1; */
+    font-family: 'Nunito', sans-serif;
+    color: black;
+}
+/* Animendar Title */
+.title h1 {
+    padding: 20px 0;
+    text-align: center;
+    font-size: 2.5em;
+}
+
+/* all days in calendar (style) */
+.days {
+    padding: 5px;
+    border: 1px solid white;
+    background: whitesmoke;
+    width: 90%;
+    max-width: 100%;
+    margin: 1.5em auto;
+}
+
+/* just calendar grid */
+.calendar {
+    display: grid;
+    /* gap: 1.5em; */
+    grid-template-columns: repeat(7, [col-start] minmax(50px, 1fr) [col-end]);
+}
+
+/* style to all h1 (name of days) */
+.calendar h1 {
+    color: black;
+    font-size: 1em;
+    text-align: center;
+    padding: 0;
+    margin: 0;
+}
+
+/* style to all p (name of anime) */
+.calendar p {
+    color: black;
+    font-size: 1em;
+    text-align: center;
+}
+
+/* style to all img (img at anime) */
+.calendar img {
+    width: 100px;
+    display: block;
+    margin: auto;
+}
+
+/* sub grids */
+.subgrid {
+    display: grid;
+    grid-template-rows: repeat(5, 1fr);
+}
+
+/* style to title and footer web */
+.all > .title,
+.all > .footer {
+    grid-column: 1/-1;
+    color: white;
+    background: #56423D ;
+    text-align: center;
+}
+
+/* style of navigation bar */
+.navigation {
+    background: #BEA6A0;
+    color: black;
+    font-size: 1em;
+    text-align: center;
+    
+}
+
+
+/* style of elemnts at nav bar */
+.navigation li {
+    outline: none;
+    list-style: none;
+    text-decoration: none;
+    display: inline-block;
+    padding: 10px;
+    margin: auto 5%;
+
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.navigation li a {
+    outline: none;
+    list-style: none;
+    text-decoration: none;
+    
+}
+
+/* effect to nav bar*/
+.navigation li:hover {
+    cursor: pointer;
+    color: #BEA6A0;
+    background: #56423D;
+}
+
+@media screen and (max-width: 768px) {
+
+    .navigation {
+        grid-column: 1/-1;
+        grid-row: 1/-1;
+    }
+
+    .header {
+        grid-column: 1/-1;
+        grid-row: 1/-1;
+    }
+
+    .calendar {
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+
+    img {
+
+        max-width: 100%;
+    }
+}
