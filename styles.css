@@ -58,7 +58,46 @@ body {
     vertical-align: bottom;
 }
 
-/* all days in calendar (style) */
+/* style of navigation bar */
+.navigation ul {
+    background-color: var(--navback);
+    list-style-type: none;
+    list-style: none;
+    text-align: center;
+}
+
+.navigation li {
+    display: inline;
+}
+
+.navigation a {
+    display: inline-block;
+    text-decoration: none;
+    color: var(--navigationcolor);
+    font-size: 15px;
+    font-weight: 600;
+    padding: 10px;
+    transition: all 0.3s ease-in-out ;
+}
+
+/* effect to nav bar*/
+li a:hover {
+    background-color: var(--navhoverback);
+    color: var(--navhovercolor);
+    
+}
+
+/* Winter 2022 */
+.winterAnime {
+    color: var(--title);
+    text-align: center ;
+    font-size: 1.5em;
+    margin-left: 30%;
+    margin-right: 30%;
+    margin-top: 20px;
+    text-shadow: 0px 0px 20px rgba(0, 0, 0, 0.253);
+    border-bottom: var(--subgridborder) 1px solid;
+}
 
 /* just calendar grid */
 .calendar {
@@ -146,35 +185,6 @@ body {
     display: block;
     width: 25px;
     float: left;
-}
-
-/* style of navigation bar */
-.navigation ul {
-    background-color: var(--navback);
-    list-style-type: none;
-    list-style: none;
-    text-align: center;
-    /*border: var(--navback) 1px solid;*/
-}
-
-.navigation li {
-    display: inline;
-}
-
-.navigation a {
-    display: inline-block;
-    text-decoration: none;
-    color: var(--navigationcolor);
-    font-size: 15px;
-    font-weight: 600;
-    padding: 10px;
-    transition: all 0.3s ease-in-out ;
-}
-
-/* effect to nav bar*/
-li a:hover {
-    background-color: var(--navhoverback);
-    color: var(--navhovercolor);
 }
 
 /* ------ Style US page -------*/
