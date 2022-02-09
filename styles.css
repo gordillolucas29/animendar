@@ -105,11 +105,11 @@ body {
 
 /* style to all img (img at anime) */
 .daybox img {
-    width: 100px ; 
+    width: 100px; 
+    height: 140px;
     display: block;
     margin: 5px auto;
 }
-
 
 .daybox div {
     transition: all 0.3s ease-in-out ;
@@ -124,6 +124,9 @@ body {
 /* style to all p (name of anime) */
 
 .animeBox p {
+    margin: auto;
+    width: auto;
+    height: 101px;
     color: var(--animeboxcolor);
     text-align: center;
     border-top: var(--subgridborder) 1px solid;
@@ -197,6 +200,11 @@ li a:hover {
     margin: 10px;
 }
 
+/* test zone */
+
+
+
+/* end test zone */
 @media screen and (max-width: 820px) {
 
     .navigation {
@@ -237,11 +245,7 @@ li a:hover {
 }
 
 @media screen and (max-width: 768px){
-    
-    .days {
-        /* width: 90%; */
-    }
-    
+        
     .calendar {
         grid-template-columns: auto;
         margin: 20px;
@@ -257,5 +261,3 @@ li a:hover {
         border: none;
     }
 }
-
-/* Quitar html al final de una pagina, fix footer, resize image*/
