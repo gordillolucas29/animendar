@@ -9,38 +9,26 @@
     <link rel="stylesheet" href="img/">
     <link rel="icon" type="image/x-icon" href="img/favicon.ico">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/be440a05a3.js" crossorigin="anonymous"></script>
 </head>
 <body>
     <div class="all">
-        <header class="title">
-           <!-- <img src="img/calendar-icon.png" alt="calendar-icon"> --> 
-            <h1>Animendar</h1>
-        </header>
 
-        <nav class="navigation">
-            <ul>
-                    <li><a href="#">Home</a></li>     
-                    <li><a href="#">Now</a></li>
-                    <li><a href="https://animendar.ml/us.html" title="Us" >Us</a></li>
+        <script type="module" src="main.js"></script>
 
-            </ul>
-        </nav>
+        <page-header></page-header>
+
         <h1 class="winterAnime">Winter 2022</h1>
-        <!--  Test zone  -->
 
-
-        <!-- End test zone -->
-
-        <main class="days">
-            
+        <main>
             <div class="calendar">
-                    <div class="subgrid"> <!--Monday-->
+                    <div class="days-border"> <!--Monday-->
                         <h1>Monday</h1>
                         <div class="daybox">
 
                         </div>
                     </div>
-                    <div class="subgrid"> <!--Tuesday-->
+                    <div class="days-border"> <!--Tuesday-->
                         <h1>Tuesday</h1>
                         <div class="daybox">
                             <div class="animeBox">
@@ -50,7 +38,7 @@
                         </div>
 
                     </div>
-                    <div class="subgrid"> <!--Wednesday-->
+                    <div class="days-border"> <!--Wednesday-->
                         <h1>Wednesday</h1>
                         <div class="daybox">
                             <div class="animeBox">
@@ -63,7 +51,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="subgrid"> <!--Thursday-->
+                    <div class="days-border"> <!--Thursday-->
                         <h1>Thursday</h1>
                         <div class="daybox">
                             <div class="animeBox">
@@ -73,14 +61,14 @@
                         </div>
 
                     </div>
-                    <div class="subgrid"> <!--Friday-->
+                    <div class="days-border"> <!--Friday-->
                         <h1>Friday</h1>
                         <div class="daybox">
 
                         </div>
 
                     </div>
-                    <div class="subgrid"> <!--Saturday-->
+                    <div class="days-border"> <!--Saturday-->
                         <div>
                             <h1>Saturday</h1>
                             <div class="daybox">
@@ -104,7 +92,7 @@
                         </div>
                         
                     </div>
-                    <div class="subgrid"> <!--Sunday-->
+                    <div class="days-border"> <!--Sunday-->
                         <h1>Sunday</h1>
                         <div class="daybox">
                             <div class="animeBox">
@@ -129,10 +117,9 @@
             </div>
         </main>
 
-        <footer class="footer">
-            <a href="https://github.com/gordillolucas29" target="_blank"><img src="img/github.png" alt="github"></a>
-            <p>made with a little ♡ (just a little)</p>
-        </footer>
+        <page-footer></page-footer>
+
     </div>
+
 </body>
 </html>

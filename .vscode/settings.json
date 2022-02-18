@@ -1,0 +1,7 @@
+{
+    "rpc.appName": "Visual Studio Code",
+    "rpc.buttonEnabled": true,
+    "rpc.lowerDetailsEditing": "Working on {file_name}",
+    "rpc.detailsViewing": "In {workspace} ",
+    "rpc.detailsEditing": "In {workspace} "
+}

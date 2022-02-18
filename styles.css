@@ -5,65 +5,109 @@
     -webkit-tap-highlight-color: transparent;
 }
 
+/* root colors css */
+:root {
+    /* Colors */
+    --dark-graydark:#212121;
+    --dark-gray: #424242;
+    --dark-graytwo: #616161;
+    --dark-graythree:#757575;
+    --dark-gray-opacity:#75757525;
+    --dark-secondary-pink:#F48FB1;
+    --light-white: #fafafa;
+    --light-whiteplus: #ebebeb;
+    --light-blue: #66bfbf;
+    --pink: #f76b8a;
+    --pink-obscure: #f76b895d;
+
+    --bg-body: var(--light-white);
+    --color-title: var(--pink);
+    --bg-us: var(--light-whiteplus); /*us.html*/
+    --color-us: var(--dark-graydark);
+
+    --bg-navbar: var(--light-blue);
+    --color-navbar: var(--light-white);
+    --bg-navbar-hover: var(--light-white) ;
+    --color-navbar-hover: var(--light-blue) ;
+    /*index.html*/
+    --bg-calendar: var(--light-whiteplus);
+    --bg-calendar-title: var(--pink);
+    --color-calendar-title: var(--light-white);
+    --border-calendar: var(--pink);
+    --daybox-hover: var(--pink-obscure);
+    --color-animebox: black;
+    /*end index.html*/
+
+    --bg-footer: var(--light-blue);
+    --color-footer: var(--light-white);
+}
+
+.dark-theme {
+    /* Dark Mode on */
+    --bg-body: var(--dark-graydark);
+    --color-tile: var(--dark-secondary-pink);
+
+    --bg-navbar: var(--dark-gray);
+    --bg-navbar-hover: var(--dark-graythree);
+    --color-navbar-hover: var(--dark-graydark) ;
+
+    --bg-calendar-title: var(--dark-graytwo);
+    --bg-calendar: var(--dark-gray);
+    --border-calendar: var(--dark-graytwo);
+    --color-animebox: var(--light-white);   
+    --daybox-hover: var(--dark-gray-opacity);
+
+    --bg-us: var(--dark-gray);
+    --color-us: var(--light-white);
+
+    --bg-footer: var(--dark-gray);
+
+}
+
 body {
-    background: var(--background);
+    background: var(--bg-body);
     font-family: 'Poppins', sans-serif;
     color: black;
     overflow-x: hidden;
-}
-
-/* root colors css */
-:root {
-    /*background*/
-    --background: #fcfefe;
-    --footer: #66bfbf;
-    --usbox: #eaf6f6;
-    /*navbar*/
-    --navback: #66bfbf;
-    --navhoverback: #fcfefe ;
-    --navhovercolor: #66bfbf;
-    /* calendar */
-    --calendarback: #f76b8a;
-    --daysback: #eaf6f6;
-    --subgridborder: #f76b8a;
-    --dayboxhover: #f76b895d;
-    /* Titles and text */
-    --title: #f76b8a;
-    --calendarh1: #fcfefe;
-    --animeboxcolor: black;
-    --navigationcolor: #fcfefe;
-    --footercolor: #fcfefe;
+    transition: all 300ms ease-in-out;
 }
 
 /* Animendar Title */
-.all > .title {
-    color: var(--title);
+.title {
+    color: var(--color-title);
     text-align: center ;
     padding: 20px;
 }
 
-.title img {
-    width: 60px;
-}
-
 .title h1 {
     font-size: 2.5em;
-    text-shadow: 0px 0px 20px #f76b89ea ;
-    transition: text-shadow 2s ease;
-}
-
-.title img,
-.title h1 {
     display: inline-block;
     vertical-align: bottom;
+    animation: title-animation 2s ease-in-out infinite alternate both;
+
 }
+
+/* Animation of Title */
+
+
+@keyframes title-animation {
+    0% {
+      text-shadow: 0 0 0 rgba(0, 0, 0, 0);
+    }
+    100% {
+      text-shadow: 0 0 20px #f48fb1;
+    }
+  }
 
 /* style of navigation bar */
 .navigation ul {
-    background-color: var(--navback);
+    background-color: var(--bg-navbar);
     list-style-type: none;
     list-style: none;
     text-align: center;
+    position: relative;
+    transition: background-color 300ms ease-in-out;
+
 }
 
 .navigation li {
@@ -73,7 +117,7 @@ body {
 .navigation a {
     display: inline-block;
     text-decoration: none;
-    color: var(--navigationcolor);
+    color: var(--color-navbar);
     font-size: 15px;
     font-weight: 600;
     padding: 10px;
@@ -82,43 +126,105 @@ body {
 
 /* effect to nav bar*/
 li a:hover {
-    background-color: var(--navhoverback);
-    color: var(--navhovercolor);
+    background-color: var(--bg-navbar-hover);
+    color: var(--color-navbar-hover);
     
+}
+
+/* Dark Mode Button */
+
+.onoffswitch {
+    display: inline-block; position: absolute; width: 48px;
+    top: 25%;
+    right: 10px;
+}
+
+.onoffswitch-checkbox {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+}
+.onoffswitch-label {
+    display: block; overflow: hidden; cursor: pointer;
+    border-radius: 20px;
+}
+.onoffswitch-inner {
+    display: block; width: 200%; margin-left: -100%;
+    transition: margin 0.3s ease-in 0s;
+}
+.onoffswitch-inner:before, .onoffswitch-inner:after {
+    display: block; float: left; width: 50%; height: 20px; padding: 0 40px; line-height: 20px;
+    font-size: 10px; color: white; font-family: Trebuchet, Arial, sans-serif; font-weight: bold;
+    box-sizing: border-box;
+}
+.onoffswitch-inner:before {
+    /*sun*/
+    font-family: FontAwesome;
+    content: "\f185";
+    padding-left: 6px;
+    background-color: #363434; color: #FFFFFF;
+}
+.onoffswitch-inner:after {
+    /*moon*/
+    font-family: FontAwesome;
+    content: "\f6c3";
+    padding-left: 10px;
+    padding-right: 5px;
+    background-color: #EEEEEE; color: #999999;
+    text-align: right;
+}
+.onoffswitch-switch {
+    display: block; width: 22px; margin: -2px;
+    background: #FFFFFF;
+    position: absolute; top: 0; bottom: 0;
+    right: 26px;
+    border: 1px solid #999999; border-radius: 30px;
+    transition: all 0.3s ease-in 0s; 
+}
+.onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-inner {
+    margin-left: 0;
+}
+.onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-switch {
+    right: 0px; 
 }
 
 /* Winter 2022 */
 .winterAnime {
-    color: var(--title);
+    color: var(--color-title);
     text-align: center ;
     font-size: 1.5em;
     margin-left: 30%;
     margin-right: 30%;
-    margin-top: 20px;
+
     text-shadow: 0px 0px 20px rgba(0, 0, 0, 0.253);
-    border-bottom: var(--subgridborder) 1px solid;
+    border-bottom: var(--border-calendar) 1px solid;
 }
 
 /* just calendar grid */
 .calendar {
-    background: var(--daysback);
+    background: var(--bg-calendar);
     margin: 20px 40px;
     display: grid;
     grid-template-columns: repeat(7, 1fr);
     box-shadow: 0px 10px 24px 2px rgba(0, 0, 0, 0.322);
     transition: box-shadow 2s ease;
 
-    border-right: var(--subgridborder) 4px solid;
-    border-bottom: var(--subgridborder) 4px solid;
+    border-right: var(--border-calendar) 4px solid;
+    border-bottom: var(--border-calendar) 4px solid;
+
+    transition: all 300ms ease-in-out;
+
 }
 
 /* style to all h1 (name of days) */
 .calendar h1 {
-    color: var(--calendarh1);
+    color: var(--color-calendar-title);
     font-size: 1em;
     text-align: center;
-    background-color: var(--calendarback);
+    background-color: var(--bg-calendar-title);
     padding: 15px 0;
+    transition: background-color 300ms ease-in-out;
+
 }
 
 .calendar .daybox {
@@ -127,7 +233,8 @@ li a:hover {
 }
 
 .daybox {
-    border-left: var(--subgridborder) 4px solid;
+    border-left: var(--border-calendar) 4px solid;
+    transition: border-left 300ms ease-in-out;
 }
 
 /* Column for responsive grid at calendar (800px) */
@@ -156,7 +263,7 @@ li a:hover {
 
 .daybox div:hover{ 
     cursor: pointer;
-    background: var(--dayboxhover);
+    background: var(--daybox-hover);
     opacity: .8;
 }
 
@@ -166,18 +273,23 @@ li a:hover {
     margin: auto;
     width: auto;
     height: 101px;
-    color: var(--animeboxcolor);
+    color: var(--color-animebox);
     text-align: center;
-    border-top: var(--subgridborder) 1px solid;
+    border-top: var(--border-calendar) 1px solid;
+
+    transition: color 300ms ease-in-out;
+
 }
 
 /* style to footer web */
 .footer {
-    background: var(--footer);
-    color: var(--footercolor);
+    background: var(--bg-footer);
+    color: var(--color-footer);
     text-align: center;
     padding: 20px;
     font-size: 15px;
+    transition: background 300ms ease-in-out;
+
 }
 
 .footer img {
@@ -190,7 +302,8 @@ li a:hover {
 /* ------ Style US page -------*/
 
 .us-box {
-    background: var(--usbox);
+    background: var(--bg-us);
+    color: var(--color-us);
     width: 70%;
     height: 500px;
     max-width: 100%;
@@ -211,7 +324,6 @@ li a:hover {
 }
 
 /* test zone */
-
 
 
 /* end test zone */
@@ -240,17 +352,17 @@ li a:hover {
         border: none;
     }
 
-    .subgrid {
-        border-left: var(--subgridborder) 4px solid;
+    .days-border {
+        border-left: var(--border-calendar) 4px solid;
     }
 
     /* Column for responsive grid at calendar */
     .noday {
         display: block;
-        border-left: var(--subgridborder) 4px solid;
+        border-left: var(--border-calendar) 4px solid;
     }
     .noday h1 {
-        color: var(--calendarback);
+        color: var(--bg-calendar-title);
     }
 }
 
@@ -259,7 +371,7 @@ li a:hover {
     .calendar {
         grid-template-columns: auto;
         margin: 20px;
-        border: var(--subgridborder) 4px solid;
+        border: var(--border-calendar) 4px solid;
     }
 
     .calendar .daybox {
@@ -267,7 +379,7 @@ li a:hover {
         grid-template-rows: auto;
     }
 
-    .subgrid {
+    .days-border {
         border: none;
     }
 }
